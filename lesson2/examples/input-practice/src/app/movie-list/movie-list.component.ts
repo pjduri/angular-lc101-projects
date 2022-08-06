@@ -14,28 +14,28 @@ export class MovieListComponent implements OnInit {
    }
 
    // my solution before checking book solution
-   // addMovie (newTitle: string) {
+   addMovie (newTitle: string) {
 
-   //    if(!this.movies.includes(newTitle) && newTitle !== '') {
-   //       this.movies.push(newTitle)
-   //       return 'ok'
-   //    } else {
-   //       return 'no'
-   //    }
+      if(!this.movies.includes(newTitle) && newTitle !== '') {
+         this.movies.push(newTitle)
+         return 'ok'
+      } else {
+         return 'no'
+      }
       
-   // }
+ }
 
    //book solution starts here:
-   addMovie (newTitle: string) {
-      let errorMsg = '';
-      if(newTitle === ''){
-         errorMsg = 'Please enter a movie title.';
-      } else if (this.movies.includes(newTitle)) {
-         errorMsg = `${newTitle} is already in your movie list.`;
-      } else {
-         this.movies.push(newTitle);
-      }
-      return errorMsg;
-   }
+   // addMovie (newTitle: string) {
+   //    let errorMsg = '';
+   //    if(newTitle === ''){
+   //       errorMsg = 'Please enter a movie title.';
+   //    } else if (this.movies.includes(newTitle)) {
+   //       errorMsg = `${newTitle} is already in your movie list.`;
+   //    } else {
+   //       this.movies.push(newTitle);
+   //    }
+   //    return errorMsg;
+   // }
 
 }

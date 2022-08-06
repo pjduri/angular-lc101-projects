@@ -7,20 +7,20 @@
     </ol>
     <hr>
    
-<!-- //this is what I managed before checking solution
+<!-- //this is what I managed before checking solution -->
     <input #newMovie 
     (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''; clicked = true" 
     type="text" 
     placeholder="Enter Movie Title Here"/>
 
    <button (click)="addMovie(newMovie.value); newMovie.value = ''; clicked = true">Add</button>
-   <button *ngIf="clicked === true" (click)="clicked = false">Clear</button>
+   <button *ngIf="clicked === true" (click)="clicked = false; newMovie.value = ''; preventDefault()">Clear</button>
     
     <h4 *ngIf="addMovie(newMovie.value) !== 'ok' && clicked === true">Empty field or duplicate movie.</h4> 
    
--- below here is the book solution-->
-<input #newMovie (keyup.enter)="message = addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
+<!-- below here is the book solution-->
+<!-- <input #newMovie (keyup.enter)="message = addMovie(newMovie.value); newMovie.value = ''" type="text" placeholder="Enter Movie Title Here"/>
 <button (click)="message = addMovie(newMovie.value); newMovie.value = ''">Add</button>
-<p class = "error" *ngIf = "message">{{message}}</p>
+<p class = "error" *ngIf = "message">{{message}}</p> -->
    
 </div>
