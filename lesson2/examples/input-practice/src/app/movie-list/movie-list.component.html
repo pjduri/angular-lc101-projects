@@ -1,15 +1,20 @@
 <div class='movies col-4'>
+
     <h3>Movies to Watch</h3>
+   
     <ol>
        <li *ngFor ="let movie of movies">{{movie}}</li>
     </ol>
     <hr>
+   
     <input #newMovie 
-    (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''; clicked = 'true'" 
+    (keyup.enter)="addMovie(newMovie.value); newMovie.value = ''; clicked = true" 
     type="text" 
     placeholder="Enter Movie Title Here"/>
-    <button (click)="addMovie(newMovie.value); newMovie.value = ''; clicked = 'true'">Add</button>
-    <div class="errorMessage">
-    <h4 *ngIf="addMovie(newMovie.value) !== 'ok' && clicked === 'true'; else noH4">INPUT NOT VALID</h4>
-   </div>
+   
+    <button (click)="addMovie(newMovie.value); newMovie.value = ''; clicked = true">Add</button>
+    <button *ngIf="clicked === true" (click)="clicked = false">Clear</button>
+    
+    <h4 *ngIf="addMovie(newMovie.value) !== 'ok' && clicked === true">Empty field or duplicate movie.</h4>
+
 </div>
