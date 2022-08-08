@@ -70,8 +70,6 @@ export class AppComponent {
     }
   }
 
-  // { style: { left: string } } was a quick fix from vscode.  
-  // find out about it - probably 
   moveRocket(rocket: { style: { left: string; bottom: string } }, direction: string) {
     
     if (this.message !== 'Shuttle in flight.') {
@@ -120,19 +118,6 @@ export class AppComponent {
       this.color = 'blue'
       this.disableDownButton = false
     }
-
-    // if (parseInt(rocket.style.left) < 0) {
-    //   rocket.style.left = '480px'
-    // }
-    // if (parseInt(rocket.style.left) > 480) {
-    //   rocket.style.left = '0px'
-    // }
-    // if (parseInt(rocket.style.bottom) > 300) {
-    //   rocket.style.bottom = '0px'
-    // }
-    // if (parseInt(rocket.style.bottom) < 0) {
-    //   rocket.style.bottom = '300px'
-    // }
     
   }
 
